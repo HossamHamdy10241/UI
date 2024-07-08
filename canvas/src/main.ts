@@ -1,9 +1,8 @@
 import "./style.css";
+import {initalize} from './initializer.ts'
 
-let canvas = document.querySelector("canvas") as HTMLCanvasElement;
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-let ctx = canvas?.getContext("2d") as CanvasRenderingContext2D;
+
+let ctx = initalize()
 const img = new Image(); // Create new img element
 img.src = "public/black.png"; // Set source path
 
@@ -65,13 +64,6 @@ function animate() {
   });
   requestAnimationFrame(animate);
 }
-// animate();
-img.onload=()=>{
-  
-  ctx.drawImage(img,midwidth,midheight,50,50)
-}
+animate();
 
-// function animateimg(){
-//   ctx.save()
-//   ctx.trans
-// }
+
