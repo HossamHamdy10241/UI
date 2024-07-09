@@ -11,7 +11,7 @@ const object = {
   maxSpeed: 5,
   angle: 0,
   friction: 0.98,
-  acceleration: 0.6
+  acceleration: 0.2
 };
 
 const keys = {
