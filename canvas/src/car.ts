@@ -47,11 +47,11 @@ function drawCar(){
 }
 function update(){
     if(keys.up){
-        car.dx=2
+        car.dx=5
 
     }
     else if(keys.down){
-        car.dx=-2
+        car.dx=-5
     }
     else {car.dx=0}
    
