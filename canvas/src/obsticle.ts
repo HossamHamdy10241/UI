@@ -1,4 +1,4 @@
-export class opsticle{
+export class Opsticle{
     color:string;
     width:number;
     height:number;

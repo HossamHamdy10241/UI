@@ -1,5 +1,6 @@
 import "./style.css";
 import { initalize } from "./initializer";
+import { Opsticle } from "./obsticle";
 
 let ctx = initalize();
 let width = window.innerWidth;
@@ -85,6 +86,7 @@ window.addEventListener("keyup", (e) => {
   if (e.key === "ArrowLeft") keys.left = false;
   if (e.key === "ArrowRight") keys.right = false;
 });
+
 
 function animate() {
   ctx.fillStyle = "rgba(0,0,0,0.2)";
