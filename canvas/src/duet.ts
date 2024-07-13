@@ -87,7 +87,7 @@ window.addEventListener("keyup", (e) => {
   if (e.key === "ArrowRight") keys.right = false;
 });
 let ops = new Opsticle('rgba(255,255,255,0.6)',150,30,width/2,width/2-150,25)
-
+let opses :Opsticle[]=[]
 function animate() {
   ctx.fillStyle = "rgba(0,0,0,0.2)";
   ctx.fillRect(0, 0, width, height);
