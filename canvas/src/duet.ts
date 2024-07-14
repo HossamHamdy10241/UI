@@ -87,15 +87,27 @@ window.addEventListener("keyup", (e) => {
   if (e.key === "ArrowRight") keys.right = false;
 });
 let ops = new Opsticle('rgba(255,255,255,0.6)',150,30,width/2,width/2-150,25)
-let opses :Opsticle[]=[]
+let opsX:number[]=[]
+let opsY:number[]=[]
+let count:number = 6
+for(let i = 0;i<count;i++){
+  let s = Math.random()
+  s>.5? opsX[i]=width/2:opsX[i]=width/2-160;
+  opsY[i]=300-i*150
+}
+
 function animate() {
   ctx.fillStyle = "rgba(0,0,0,0.2)";
   ctx.fillRect(0, 0, width, height);
   maincirc.draw(ctx);
   cerciles.draw(ctx);
+  for(let i = 0; i<count; i++){
+    ctx.fillStyle='white';
+    ctx.fillRect(opsX[i],opsY[i],150,30)
+    opsY[i]++;
+  }
 
-  ops.draw(ctx)
-  ops.update(5)
+ 
   cerciles.updat();
   requestAnimationFrame(animate);
 }
