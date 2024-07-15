@@ -58,9 +58,9 @@ let cerciles = {
   },
   updat() {
     if (keys.left) {
-      this.change = -0.05;
+      this.change = -0.01;
     } else if (keys.right) {
-      this.change = 0.05;
+      this.change = 0.01;
     } else {
       this.change = 0;
     }
@@ -89,22 +89,31 @@ window.addEventListener("keyup", (e) => {
 let ops = new Opsticle('rgba(255,255,255,0.6)',150,30,width/2,width/2-150,25)
 let opsX:number[]=[]
 let opsY:number[]=[]
-let count:number = 6
+let count:number = 5
 for(let i = 0;i<count;i++){
   let s = Math.random()
   s>.5? opsX[i]=width/2:opsX[i]=width/2-160;
-  opsY[i]=300-i*150
+  opsY[i]=height-340-i*170
+
 }
+let higher:number= opsY[count-1]+170
+
 
 function animate() {
-  ctx.fillStyle = "rgba(0,0,0,0.2)";
+  ctx.fillStyle = "rgba(0,0,0,0.4)";
   ctx.fillRect(0, 0, width, height);
   maincirc.draw(ctx);
   cerciles.draw(ctx);
   for(let i = 0; i<count; i++){
     ctx.fillStyle='white';
     ctx.fillRect(opsX[i],opsY[i],150,30)
-    opsY[i]++;
+    opsY[i]+=3.5;
+    if(opsY[i]>= height){
+      Math.random()>.5?opsX[i]=width/2:opsX[i]=width/2-160;
+      console.log(opsY)
+      opsY[i]=higher
+      
+    }
   }
 
  
