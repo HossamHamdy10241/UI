@@ -10,7 +10,7 @@ let maincirc = {
   x: width / 2,
   y: height / 1.4,
   color: "white",
-  radius: 100,
+  radius: 88,
   draw(crc: CanvasRenderingContext2D) {
     crc.strokeStyle = "rgba(255,255,255,0.05)";
     crc.beginPath();
@@ -26,13 +26,13 @@ let cerciles = {
   y: height / 1.4,
   ange:Math.PI/170,
   radius: 14,
-  bigrad: 100,
+  bigrad: 88,
   blueang: 0,
   redang: Math.PI,
-  blueX: 100 * Math.cos(0),
-  blueY: 100 * Math.sin(0),
-  redX: 100 * Math.cos(Math.PI),
-  redY: 100 * Math.sin(Math.PI),
+  blueX: 88 * Math.cos(0),
+  blueY: 88 * Math.sin(0),
+  redX: 88 * Math.cos(Math.PI),
+  redY: 88 * Math.sin(Math.PI),
   draw(ctx: CanvasRenderingContext2D) {
     ctx.beginPath();
     ctx.arc(
