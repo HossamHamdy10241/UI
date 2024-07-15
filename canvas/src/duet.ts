@@ -58,11 +58,11 @@ let cerciles = {
   },
   updat() {
     if (keys.left) {
-      this.change = -0.01;
+      this.change += -0.001;
     } else if (keys.right) {
-      this.change = 0.01;
+      this.change += 0.001;
     } else {
-      this.change = 0;
+      Math.abs(this.change)<.006? this.change=0:this.change *=.98 ;
     }
     this.blueang += this.change;
     this.redang += this.change;
@@ -100,8 +100,9 @@ let higher:number= opsY[count-1]+170
 
 
 function animate() {
-  ctx.fillStyle = "rgba(0,0,0,0.4)";
-  ctx.fillRect(0, 0, width, height);
+  // ctx.fillStyle = "rgba(0,0,0,0.4)";
+  // ctx.fillRect(0, 0, width, height);
+  ctx.clearRect(0, 0, width, height);
   maincirc.draw(ctx);
   cerciles.draw(ctx);
   for(let i = 0; i<count; i++){
