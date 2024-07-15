@@ -10,7 +10,7 @@ let maincirc = {
   x: width / 2,
   y: height / 1.4,
   color: "white",
-  radius: 90,
+  radius: 100,
   draw(crc: CanvasRenderingContext2D) {
     crc.strokeStyle = "rgba(255,255,255,0.05)";
     crc.beginPath();
@@ -24,14 +24,15 @@ let cerciles = {
   change: 0,
   x: width / 2,
   y: height / 1.4,
+  ange:Math.PI/170,
   radius: 14,
-  bigrad: 90,
+  bigrad: 100,
   blueang: 0,
   redang: Math.PI,
-  blueX: 90 * Math.cos(0),
-  blueY: 90 * Math.sin(0),
-  redX: 90 * Math.cos(Math.PI),
-  redY: 90 * Math.sin(Math.PI),
+  blueX: 100 * Math.cos(0),
+  blueY: 100 * Math.sin(0),
+  redX: 100 * Math.cos(Math.PI),
+  redY: 100 * Math.sin(Math.PI),
   draw(ctx: CanvasRenderingContext2D) {
     ctx.beginPath();
     ctx.arc(
@@ -58,11 +59,12 @@ let cerciles = {
   },
   updat() {
     if (keys.left) {
-      this.change += -0.001;
+      this.change = -this.ange*4;
     } else if (keys.right) {
-      this.change += 0.001;
+      this.change = this.ange*4;
     } else {
-      Math.abs(this.change)<.006? this.change=0:this.change *=.98 ;
+      // Math.abs(this.change)<.006? this.change=0:this.change *=.98 ;
+      this.change=0
     }
     this.blueang += this.change;
     this.redang += this.change;
@@ -108,10 +110,10 @@ function animate() {
   for(let i = 0; i<count; i++){
     ctx.fillStyle='white';
     ctx.fillRect(opsX[i],opsY[i],150,30)
-    opsY[i]+=3.5;
+    opsY[i]+=4;
     if(opsY[i]>= height){
       Math.random()>.5?opsX[i]=width/2:opsX[i]=width/2-160;
-      console.log(opsY)
+      // console.log(opsY)
       opsY[i]=higher
       
     }
